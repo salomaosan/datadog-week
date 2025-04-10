@@ -4,7 +4,7 @@ metadata:
   labels:
     app: ecommerce
     service: discounts
-    tags.datadoghq.com/env: 'maratona'
+    tags.datadoghq.com/env: 'prd'
     tags.datadoghq.com/service: 'discounts'
     tags.datadoghq.com/version: '1.0'
   name: discounts
@@ -20,7 +20,7 @@ spec:
       labels:
         app: ecommerce
         service: discounts
-        tags.datadoghq.com/env: 'maratona'
+        tags.datadoghq.com/env: 'prd'
         tags.datadoghq.com/service: 'discounts'
         tags.datadoghq.com/version: '1.0'
         admission.datadoghq.com/enabled: "true"

@@ -69,16 +69,16 @@ Baixe o arquivo completo link [datadog-values.yaml](https://github.com/DataDog/h
     datadog.apiKeyExistingSecret ## linha 105
     datadog.clusterName ## linha 105
     datadog.site ## linha 116
-    datadog.tags ## linha 264
-    datadog.kubelet.tlsVerify ## linha 282
-    datadog.logs.enabled ## linha 425
-    datadog.logs.containerCollectAll ## linha 430
-    datadog.apm ## linha 446
-    datadog.apm.portEnabled ## linha 451
-    datadog.processAgent.enabled ## linha 626
-    datadog.processAgent.processCollection ## linha 629
-    clusterAgent.replicas ## linha 1006
-    clusterAgent.createPodDisruptionBudget ## linha 1332
+    datadog.tags ## linha 285
+    datadog.kubelet.tlsVerify ## linha 304
+    datadog.logs.enabled ## linha 458
+    datadog.logs.containerCollectAll ## linha 463
+    datadog.apm ## linha 479
+    datadog.apm.portEnabled ## linha 483
+    datadog.processAgent.enabled ## linha 727
+    datadog.processAgent.processCollection ## linha 735
+    clusterAgent.replicas ## linha 1175
+    clusterAgent.createPodDisruptionBudget ## linha 1532
     ```
 
 Execute o comando abaixo para atualizar o agent
