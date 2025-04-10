@@ -4,7 +4,7 @@ metadata:
   labels:
     app: ecommerce
     service: frontend
-    tags.datadoghq.com/env: 'maratona'
+    tags.datadoghq.com/env: 'prd'
     tags.datadoghq.com/service: 'store-frontend'
     tags.datadoghq.com/version: '1.0'
   name: frontend
@@ -21,12 +21,16 @@ spec:
       labels:
         app: ecommerce
         service: frontend
-        tags.datadoghq.com/env: 'maratona'
+        tags.datadoghq.com/env: 'prd'
         tags.datadoghq.com/service: 'store-frontend'
         tags.datadoghq.com/version: '1.0'
       annotations:
         ad.datadoghq.com/storefront.logs: '[{"source": "ruby", "service": "store-frontend"}]'
     spec:
+      volumes:
+        - hostPath:
+            path: /var/run/datadog/
+          name: apmsocketpath
       containers:
       - args:
         - docker-entrypoint.sh
@@ -35,10 +39,6 @@ spec:
         env:
         - name: DD_LOGS_INJECTION
           value: "true"
-        - name: DD_AGENT_HOST
-          valueFrom:
-            fieldRef:
-              fieldPath: status.hostIP
         - name: DD_ENV
           valueFrom:
             fieldRef:
@@ -63,6 +63,9 @@ spec:
         image: salomaosan/storefront:v0.2-apm
         imagePullPolicy: Always
         name: storefront
+        volumeMounts:
+          - name: apmsocketpath
+            mountPath: /var/run/datadog
         ports:
         - containerPort: 3000
           protocol: TCP

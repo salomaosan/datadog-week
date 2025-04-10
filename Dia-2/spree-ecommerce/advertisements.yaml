@@ -4,7 +4,7 @@ metadata:
   labels:
     app: ecommerce
     service: advertisements
-    tags.datadoghq.com/env: 'maratona'
+    tags.datadoghq.com/env: 'prd'
     tags.datadoghq.com/service: 'advertisements'
     tags.datadoghq.com/version: '1.0'
   name: advertisements
@@ -20,7 +20,7 @@ spec:
       labels:
         app: ecommerce
         service: advertisements
-        tags.datadoghq.com/env: 'maratona'
+        tags.datadoghq.com/env: 'prd'
         tags.datadoghq.com/service: 'advertisements'
         tags.datadoghq.com/version: '1.0'
       annotations:
