@@ -23,34 +23,15 @@ spec:
         tags.datadoghq.com/env: 'prd'
         tags.datadoghq.com/service: 'advertisements'
         tags.datadoghq.com/version: '1.0'
+        admission.datadoghq.com/enabled: "true"
       annotations:
+        admission.datadoghq.com/python-lib.version: v3.4.1
         ad.datadoghq.com/advertisements.logs: '[{"source": "python", "service": "advertisements"}]'
     spec:
-      volumes:
-      - hostPath:
-          path: /var/run/datadog/
-        name: apmsocketpath
       containers:
-      - image: salomaosan/ads:v0.1
+      - image: salomaosan/ads:v0.1-adm
         name: advertisements
-        command: ["ddtrace-run"]
-        args: ["flask", "run", "--port=5002", "--host=0.0.0.0"]
-        volumeMounts:
-          - name: apmsocketpath
-            mountPath: /var/run/datadog
         env:
-          - name: DD_ENV
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.labels['tags.datadoghq.com/env']
-          - name: DD_SERVICE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.labels['tags.datadoghq.com/service']
-          - name: DD_VERSION
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.labels['tags.datadoghq.com/version']
           - name: DD_LOGS_INJECTION
             value: "true"
           - name: FLASK_DEBUG

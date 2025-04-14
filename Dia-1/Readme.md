@@ -20,7 +20,7 @@
 
 >**💡NOTA**
 >
->Os arquivo dentros do diretório ***spree-ecommerce*** é o resultado das alterações ao final do Dia 1. Na dúvida consulte-os arquivos
+>Os arquivo dentros do diretório ***spree-ecommerce*** é o resultado das alterações ao final do Dia 1. Dúvidas após o 1º dia consulte esses arquivos
 
 
 ## 1º passo - Para subir a aplicação sem alteração
@@ -30,7 +30,7 @@ Clone o repositório e acesse o diretório ***maratona-datadog*** e suba a aplic
 kubectl apply -f spree-ecommerce/
 ```
 
-## 2º Passo - Subir o Datadog agent via comando
+## 2º Passo - Instalação de repositórios
 
 Agora, adicione o repositório helm da Datadog
 
@@ -38,7 +38,7 @@ Agora, adicione o repositório helm da Datadog
 helm repo add datadog https://helm.datadoghq.com
 ```
 
-Atualize localmente
+Atualize
 
 ```bash
 helm repo update
@@ -50,15 +50,7 @@ Antes de subir o agente no cluster, vamos criar um secrets Datadog em um comando
 kubectl create secret generic datadog-secret --from-literal api-key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Inicialmente Subiremos o agente Datadog em um comando, 
-
-```bash
-helm install datadog-agent \
---set datadog.apiKeyExistingSecret=datadog-secret \
-datadog/datadog
-```
-
-## 3º Reinstalando Datadog Agent com values.yaml
+## 3º Instalando Datadog Agent com values.yaml
 
 Baixe o arquivo completo link [datadog-values.yaml](https://github.com/DataDog/helm-charts/blob/main/charts/datadog/values.yaml)
 
@@ -84,7 +76,7 @@ Baixe o arquivo completo link [datadog-values.yaml](https://github.com/DataDog/h
 Execute o comando abaixo para atualizar o agent
 
 ```bash
-helm upgrade datadog-agent -f values.yaml datadog/datadog
+helm install datadog-agent -f values.yaml datadog/datadog
 ```
 
 ## 4º Passo - Incrementando o monitoramento no PostgreSql Integrações 

@@ -11,7 +11,7 @@
 
 >**💡NOTA**
 >
->Os arquivo dentros do diretório ***spree-ecommerce*** é o resultado das alterações ao final do Dia 3. Na dúvida consulte-os arquivos
+>Os arquivo dentros do diretório ***spree-ecommerce*** é o resultado das alterações ao final do Dia 3. Dúvidas após o 1º dia consulte esses arquivos
 
 ## RUM (Real User Monitoring)
 
@@ -70,4 +70,4 @@ kubectl apply spree-ecommerce/
 
 O conteúde de sintético é todo configurado na UI do Datadog, assista a maratona.
 
-### FIM DA MARATONA
+### FIM DA DATADOG WEEK
