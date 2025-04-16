@@ -38,9 +38,9 @@ spec:
         - sh
         env:
         - name: DD_CLIENT_TOKEN
-          value: pub6526ae4a084412427f9971364803eb59
+          value: pubd1d82cca8eaa020a8858cabc86c3f349
         - name: DD_APPLICATION_ID
-          value: 3c91fe83-bd78-4da5-a286-e16608a2f032
+          value: 0dcef840-d019-42c5-ab99-dbbf3b09c990
         - name: DD_LOGS_INJECTION
           value: "true"
         - name: DD_ENV
@@ -64,7 +64,7 @@ spec:
             secretKeyRef:
               key: pw
               name: db-password
-        image: salomaosan/storefront:v0.3-rum
+        image: salomaosan/storefront:v0.3-rum-adm
         imagePullPolicy: Always
         name: storefront
         volumeMounts:

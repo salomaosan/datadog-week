@@ -733,7 +733,7 @@ datadog:
     enabled: true
 
     # datadog.processAgent.processCollection -- Set this to true to enable process collection
-    processCollection: false
+    processCollection: true
 
     # datadog.processAgent.stripProcessArguments -- Set this to scrub all arguments from collected processes
     ## Requires datadog.processAgent.processCollection to be set to true to have any effect

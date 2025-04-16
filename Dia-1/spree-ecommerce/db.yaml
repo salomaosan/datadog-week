@@ -59,6 +59,7 @@ spec:
         service: db
         app: ecommerce
       annotations:
+      ## Coleta métricas do Postgres
         ad.datadoghq.com/postgres.checks: |
           {
             "postgres": {
